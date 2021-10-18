@@ -17,7 +17,13 @@ export default class ReviewsController {
         review,
         date
       );
-      
+
+      if (typeof ReviewResponse.courseId == "undefined") {
+        console.log("ReviewResponse is undefined. Fix it.");
+        res.status(500).json({ status: "failure" });
+        return;
+      }
+
       res.json({ status: "success" });
     } catch (e) {
       res.status(500).json({ error: e.message });

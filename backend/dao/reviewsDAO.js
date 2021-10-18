@@ -17,17 +17,20 @@ export default class ReviewsDAO {
     }
   }
 
-  static async addReview(courseId, user, review, date) {
+  static async addReview(courseId, userInfo, review, date) {
     try {
+      const courseID = ObjectId(courseId);
       const reviewDoc = {
-        name: user.name,
-        user_id: user._id,
+        name: userInfo.name,
+        user_id: userInfo._id,
         date: date,
         text: review,
-        course_id: ObjectId(courseId),
+        _id: ObjectId(courseId),
       };
-      console.log(reviewDoc["course_id"]);
-      // convert resutarant id to mongo db object id
+
+      console.log(reviewDoc)
+      console.log(courseID)
+      console.log(ObjectId(courseId))
       return await reviews.insertOne(reviewDoc);
     } catch (e) {
       console.error("unable to post review: " + e);
