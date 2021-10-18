@@ -1,13 +1,12 @@
 import React from "react";
 
-function courses() {
+function Course() {
   return (
     <div className="App">
-      {/* load different components depending on the route */}
-      Hello world.
+      Restaurants.
     </div>
   
     );
 }
 
-export default courses
+export default Course

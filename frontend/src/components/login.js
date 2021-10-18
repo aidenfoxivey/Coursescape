@@ -1,13 +1,11 @@
 import React from "react";
 
-function login() {
+function Login() {
   return (
     <div className="App">
-      {/* load different components depending on the route */}
-      Hello world.
+        Login
     </div>
-  
-    );
+  );
 }
 
-export default login
+export default Login;

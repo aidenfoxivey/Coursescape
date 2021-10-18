@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import CourseDataService from "../services/course";
 
-function coursesList() {
-  return (
-    <div className="App">
-      {/* load different components depending on the route */}
-      Hello world.
-    </div>
-  
-    );
+const CoursesList = props => {
+  const [courses, setCourses] = useState([]);
+  const [searchName, setSearchName] = useState("");
+
+  useEffect(() => {
+    retrieveCourses();
+  }, []);
+
 }
 
-export default coursesList 
+export default CoursesList;
